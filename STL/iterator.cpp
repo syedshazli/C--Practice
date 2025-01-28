@@ -14,8 +14,8 @@ int main(int argc, char* argv[]){
     ostream_iterator <int> outputInt (cout);
 
     cout<<"Your sum is ";
-    *outputInt = num1+num2; // output result to cout
+    *outputInt = num1+num2; // output result to cout, no need to say cout outputInt
 
-    cout<<endl;
+    cout<<endl; //ended on page 857
 
 }
