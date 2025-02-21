@@ -25,6 +25,9 @@ int main(){
        //also works: printArray<array<int, 3>>(myIntArray);
        printArray(myIntArray);
 
+    // can change size of array as well
+    array<int, 5> fiveArray = {1, 2, 3, 4, 5};
+        printArray(fiveArray);
     array<float, 3> myFloatArray = {1.3, 2.2f,3.1f};
       // also works  printArray<array<float, 3>>(myFloatArray);
       printArray(myFloatArray);
