@@ -1,21 +1,33 @@
 #include <stdio.h>
 #include <iostream>
 #include <iterator>
+#include <array>
 using namespace std;
 int main(int argc, char* argv[]){
 
-    cout<<"Enter two integers"<<endl;
+    array<int, 5> myArr = {1, 2, 3, 4, 5};
+    for(auto iter = myArr.begin(); iter < myArr.end(); iter+=1){
+        // access a value in an iterator, which is an abstraction?
+        // use *iter to access value under iter
+        cout<<*iter<<' ';
+    }
+    cout<<endl;
 
-    istream_iterator <int> inputInt(cin); // read int values from cin
-    int num1 = *inputInt; // read int
-    ++inputInt; // move iterator to next input
-    int num2 = *inputInt; // read new int
+    //iterate an array in reverse, we just need to change begin and end for body
+    // instead of changing and flipping around the whole structure like normally
+    // ex: for(int i = size-1, i>= 0; i-=1) vs for(int i = 0, i< size, i++)
+    // 2 very different statements syntactically
+    // where here, we only change up end and beginning ptrs
+    for(auto iter = myArr.rbegin(); iter < myArr.rend(); iter+=1){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
 
-    ostream_iterator <int> outputInt (cout);
+// Allows us to use offsets to iterate at specific starting/endpoints
+for(auto iter = myArr.rbegin()+1; iter < myArr.rend(); iter+=1){
+        cout<<*iter<<" ";
+    }
 
-    cout<<"Your sum is ";
-    *outputInt = num1+num2; // output result to cout, no need to say cout outputInt
-
-    cout<<endl; //ended on page 857
+    return 0;
 
 }
