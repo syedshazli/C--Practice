@@ -3,6 +3,19 @@
 #include <iterator>
 #include <array>
 using namespace std;
+
+template <typename T>
+void usingIterators(T array){
+    cout<<"I'm printing from iterator function"<<endl;
+    for(auto iter = array.begin(); iter < array.end(); iter +=1){
+        
+        // will print memory address if we don't use *iter
+        cout<<*iter<<' ';
+    }
+    cout<<endl;
+
+}
+
 int main(int argc, char* argv[]){
 
     array<int, 5> myArr = {1, 2, 3, 4, 5};
@@ -28,6 +41,9 @@ for(auto iter = myArr.rbegin()+1; iter < myArr.rend(); iter+=1){
         cout<<*iter<<" ";
     }
 
-    return 0;
+    //return 0;
 
+    array<int, 5> templateArr = {5, 6, 7, 8, 9};
+    usingIterators(templateArr);
 }
+
