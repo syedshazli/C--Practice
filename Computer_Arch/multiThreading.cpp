@@ -13,6 +13,8 @@ void infinite_loop(){
 }
 
 int main(){
+
+    
     thread t1(infinite_loop);
     thread t2(infinite_loop);
     
