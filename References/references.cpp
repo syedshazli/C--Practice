@@ -1,6 +1,27 @@
 #include <iostream>
 
+using namespace std;
 int main(){
+    // B does not reference A,
+    // requires new piece of memory for B
+    // int a = 5;
+    // int b = a;
+    // b+=1;
 
-    return 0;
+    // cout<<a<<endl;
+    // cout<<b<<endl;
+    // cout<<&a<<endl;
+    //cout<<&b<<endl;
+    // return 0;
+
+    // using & we don't need new memory for B
+    int a = 9;
+    int &b = a;
+    b +=1; // increments A
+    cout<<a<<endl;
+    cout<<b<<endl;
+    //print address
+    cout<<&a<<endl;
+    cout<<&b<<endl;
+
 }
