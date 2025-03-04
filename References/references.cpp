@@ -20,8 +20,10 @@ int main(){
     b +=1; // increments A
     cout<<a<<endl;
     cout<<b<<endl;
+   
      //assert(b!=a); // should return false since they are the same
     //print address
+
     cout<<&a<<endl;
     cout<<&b<<endl;
 
