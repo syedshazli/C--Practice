@@ -17,6 +17,7 @@ void myRefFunction(int myNum, int &sameNum){
     cout<<"Incremented B to be "<<sameNum<<" in the myRefFunction"<<endl;
 }
 
+// uses the memory address of the variable given by input, so that we can operate on given input
 void appendElements(vector<int> &vec, int N){
     for(int i = 0; i< N; i++){
         vec.push_back(i);
@@ -25,6 +26,7 @@ void appendElements(vector<int> &vec, int N){
 
 int main(){
     int a = 5;
+    
     int &b = a;
     myRefFunction(a, b);
 
