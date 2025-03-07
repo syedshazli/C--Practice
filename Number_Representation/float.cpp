@@ -54,7 +54,7 @@ int main(){
 
     // print final result
     uint32_t memcpy_res = 0;
-    memcpy(&memcpy, &result, sizeof(float));
+    memcpy(&memcpy_res, &result, sizeof(float));
     bitset<32> resBits(memcpy_res);
 
     cout<<"Final result = "<<result<<" = 0b"<<resBits<<endl;
