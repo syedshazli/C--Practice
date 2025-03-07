@@ -24,7 +24,7 @@ int main(){
     //calculate exponent
     for(int i = 0; i<8; i++){
         if(bits[i+23]){
-            if (i == 7){
+            if (i == 7){ // 8 bit 2s complement signed number
                 exponent -= 1<<i;
             }
             else{
@@ -32,5 +32,20 @@ int main(){
             }
         }
     }
+
+    // remove bias, calculate value
+    // 32b floating point is bias by 127 to make large numbers look large
+    exponent -= 127;
+    float expResult = pow(2, exponent);
+    cout<<"Exponent result = "<<expResult<<endl;
+
+    // calculate mantissa
+    float mantissa = 1.0f;
+    for(int i  = 0; i<23; i++){
+        if (bits[22-i]){
+            mantissa += pow(2, -i-1);
+        }
+    }
+
 
 }
