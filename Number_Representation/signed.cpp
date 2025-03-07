@@ -1,6 +1,7 @@
 // signed integers
 // lsb is at 2^0
 // msb is 2^32-1, multiplied by -1
+// program shows how 2's complemented is represented
 #include <iostream>
 #include <cstdint>
 #include <bitset>
@@ -8,7 +9,7 @@ using namespace std;
 
 int main(){
     // set signed integer value (32 bits)
-    int32_t value = 1;
+    int32_t value = -1;
     bitset<32> bits(value);
 
     // result to calculate
@@ -17,7 +18,7 @@ int main(){
     // iterate thru all 32 bits
     for(int i = 0; i<32; i++){
         if(bits[i]){
-            // current but is 1
+            // current bit is 1
             result += 1 <<i;
             // bit 31 is active, negative integer
             if(i == 31){
@@ -29,6 +30,6 @@ int main(){
             }
         }
     }
-
+    cout<<"Final sum = "<<result<<" = 0b"<<bitset<32>(result)<<endl;
 
 }
