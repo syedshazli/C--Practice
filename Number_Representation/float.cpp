@@ -47,5 +47,16 @@ int main(){
         }
     }
 
+    cout<<"Mantissa = "<<mantissa<<endl;
+
+    // calculate result
+    float result = sign * expResult * mantissa;
+
+    // print final result
+    uint32_t memcpy_res = 0;
+    memcpy(&memcpy, &result, sizeof(float));
+    bitset<32> resBits(memcpy_res);
+
+    cout<<"Final result = "<<result<<" = 0b"<<resBits<<endl;
 
 }
