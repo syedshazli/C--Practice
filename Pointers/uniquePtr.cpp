@@ -12,7 +12,7 @@ int main(){
     unique_ptr<int[]> myPtr(new int[20]);
 
     // same thing as below
-    // int *myArr = new int[5];
+    // int *myArr = new int[20];
     // unique_ptr<int[]> arrPtr(myArr); 
 
  
