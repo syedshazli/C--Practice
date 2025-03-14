@@ -16,6 +16,7 @@ int main(){
     // same thing as below
     // int *myArr = new int[20];
     // unique_ptr<int[]> arrPtr(myArr); 
+    // so this makes the pointer arrPtr set to 
 
  
     for(int i = 0; i< 20; i++){
