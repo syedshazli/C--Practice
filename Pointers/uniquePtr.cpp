@@ -6,6 +6,8 @@ using namespace std;
 // no safety when freeing memory w/raw ptrs
 // unique pointer is a smart ptr
 // no need to manually delete
+// unique owenrship over some object
+// memory automatically freed
 int main(){
     
     // dynamically allocate array
@@ -24,13 +26,13 @@ int main(){
 
     // using std:: make_unique
     // no need to use new
-    auto autoPtr = make_unique<int[]>(20); // unique ptr dynamocially allocating space for 10 ints
+    auto autoPtr = make_unique<int[]>(20); // unique ptr dynamocially allocating space for 20 ints
     for(int j = 19; j>=0; j-=1){
         autoPtr[j] = j*j;
     }
 
 
-    cout<<"With makeUnique: "<<myPtr[3]<<endl;
-    cout<<"With makeUnique: "<<myPtr[18]<<endl;
+    cout<<"With makeUnique: "<<autoPtr[3]<<endl;
+    cout<<"With makeUnique: "<<autoPtr[18]<<endl;
 
 }
