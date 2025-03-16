@@ -1,11 +1,12 @@
 #include <iostream>
-#include <vector>
 #include <map>
-
+#include <deque>
+#include <chrono>
+#include <thread>
 using namespace std;
 
 int main(){
-    cout<<"This is the current process priority"<<endl;
+    cout<<"Welcome to a demo of process priority."<<endl;
     map<int,int> priorityMap;
     // key is the PID, value is the process priority
     // process priority ranges from 0-7, 7 being highest priority
@@ -18,6 +19,43 @@ int main(){
     priorityMap[1006] = 5;
     priorityMap[1007] = 1;
 
-    // create PID's with their respective priorities
+    
+    // should have a loop that goes through the values in the hashmap, running based on higher or lower priority
+    // create a queue of waiting pids?
+    deque <int> processQueue;
+    int waitingProcess;
+
+    int currentProcess = priorityMap[1000]; // pid of current process (set to beginning of hashmap)
+    // this is how we loop through hashmaps in C++ 17
+    for (auto const& [key, val] : priorityMap){
+
+        processQueue.push_back(key);
+        cout<<"I'm about to run Process "<<currentProcess << " with a priority of "<<priorityMap[currentProcess];
+        this_thread::sleep_for (chrono::seconds(2)); // simulate running the process (assuming nothing runs for a while)
+
+        // each iteration, add a PID to the queue waiting to be ran
+        //  if the front of the queue has a higher priority than what is currently running, 
+        //      1. store waiting process in an integer
+        //      2. Remove waiting process from top of the queue
+        //      3. store current process in an integer
+        //      4. push current process to top of the queue
+        //      5. run the process with the higher priority (wait for 1000 seconds?)
+
+        // before stopping a process from running, make sure to check if a higher process priority is in the front of queue
+        
+        if(priorityMap[processQueue.front()] > priorityMap[currentProcess] ){
+            cout<<"I need to replace PID "<<currentProcess<<" with a priority of "<<priorityMap[currentProcess]<<endl;
+           
+            waitingProcess = processQueue.front(); // store the process before popping
+            cout<<"Instead, I'm going to run PID "<<waitingProcess<<" with a priority of "<<priorityMap[waitingProcess]<<endl;
+            
+            processQueue.pop_front(); // now pop that process because we want to run it
+            processQueue.push_front(currentProcess); // send the process that was running to the front
+
+            currentProcess = waitingProcess; // let people know the process running now is the one with a higher priority
+        }
+
+
+    }
 
 }
