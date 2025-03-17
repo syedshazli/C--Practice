@@ -9,28 +9,8 @@ using namespace std;
 void sleep(){
     this_thread::sleep_for (chrono::seconds(2)); 
 }
-    
-int main(){
-    cout<<"Welcome to a demo of process priority."<<endl;
-    map<int,int> priorityMap;
-    // key is the PID, value is the process priority
-    // process priority ranges from 0-7, 7 being highest priority
-    priorityMap[1000] = 0;
-    priorityMap[1001] = 4;
-    priorityMap[1002] = 2;
-    priorityMap[1003] = 3;
-    priorityMap[1004] = 6;
-    priorityMap[1005] = 7;
-    priorityMap[1006] = 5;
-    priorityMap[1007] = 1;
 
-    
-    // should have a loop that goes through the values in the hashmap, running based on higher or lower priority
-    // create a queue of waiting pids?
-    deque <int> processQueue;
-    int waitingProcess;
-
-    int currentProcess = 1000; // pid of current process (set to beginning of hashmap)
+void runSimulation(deque<int> processQueue, int waitingProcess, map<int,int> priorityMap, int currentProcess){
     // this is how we loop through hashmaps in C++ 17
     for (auto const& [key, val] : priorityMap){
         if(key == 1000){continue;}
@@ -74,6 +54,30 @@ int main(){
 
     }
 
+}
+    
+int main(){
+    cout<<"Welcome to a demo of process priority."<<endl;
+    map<int,int> priorityMap;
+    // key is the PID, value is the process priority
+    // process priority ranges from 0-7, 7 being highest priority
+    priorityMap[1000] = 0;
+    priorityMap[1001] = 4;
+    priorityMap[1002] = 2;
+    priorityMap[1003] = 3;
+    priorityMap[1004] = 6;
+    priorityMap[1005] = 7;
+    priorityMap[1006] = 5;
+    priorityMap[1007] = 1;
+
+    
+    // should have a loop that goes through the values in the hashmap, running based on higher or lower priority
+    // create a queue of waiting pids?
+    deque <int> processQueue;
+    int waitingProcess;
+
+    int currentProcess = 1000; // pid of current process (set to beginning of hashmap)
+    runSimulation(processQueue, waitingProcess, priorityMap, currentProcess);
     cout<<"Finished simulation!"<<endl;
 
 }
