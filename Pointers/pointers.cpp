@@ -16,7 +16,7 @@ int main(){
 
     // SO A POINTER NEEDS TO BE ASSIGNED TO A MEMORY ADDRESS, NOT JUST A NORMAL INT
     // And pointers need to be of same type as what you are pointing to
-    cout<<"a = 5"<<endl;
+    cout<<"a = "<<a<<endl;
     cout<<"b = " << b<<endl; // gets us an address
     cout<<"address of a  = "<<&a<<endl;
     cout<<"B is storing the address of a, pointing to the address of a"<<endl;
