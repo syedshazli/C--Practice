@@ -77,7 +77,8 @@ int main(){
     int waitingProcess;
 
     int currentProcess = 1000; // pid of current process (set to beginning of hashmap)
-    runSimulation(processQueue, waitingProcess, priorityMap, currentProcess);
+
+    runSimulation(processQueue, waitingProcess, priorityMap, currentProcess); // call function to use loop
     cout<<"Finished simulation!"<<endl;
 
 }
