@@ -16,7 +16,7 @@ int main(){
     // same thing as below
     // int *myArr = new int[20];
     // unique_ptr<int[]> arrPtr(myArr); 
-    // so this makes the pointer arrPtr set to 
+    // so this makes the pointer arrPtr set to an array of 20 integers
 
  
     for(int i = 0; i< 20; i++){
