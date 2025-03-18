@@ -8,9 +8,7 @@ using namespace std;
 #define watchfavBook(x) cout << (#x) << " favorite book is " << (x->favBook) << endl
 #define watchtotalPriceOfBooks(x) cout << (#x) << " total price of books is " << (x->totalPriceOfBooks) << endl
 
-void uniquePtrFunc(){
-    //unique_ptr<A> ptr1 (new A)
-}
+
 void smallUniquePtrFunction(shared_ptr<int[]> &sharedPtr){
     cout<<endl;
     cout<<"Hello from a pass by reference function! "<<endl;
