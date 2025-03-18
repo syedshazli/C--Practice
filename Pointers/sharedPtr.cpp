@@ -17,10 +17,20 @@ int main(){
     cout<<"Reference count to array of 20 integers: "<<myPtr.use_count()<<endl;
 
     // using make_shared to allocated array of 30 ints (C++ 20 only)
-    auto makeSharedPtr = make_shared<int[]>(30);
-    auto ptrToMakeShared = makeSharedPtr;
-    auto thirdPtr = makeSharedPtr;
-    cout<<"Reference count to array of 30 integers: "<<makeSharedPtr<<endl;
+    // auto makeSharedPtr = make_shared<int[]>(30);
+    // auto ptrToMakeShared = makeSharedPtr;
+    // auto thirdPtr = makeSharedPtr;
+    // cout<<"Reference count to array of 30 integers: "<<makeSharedPtr<<endl;
    
+   // try to modify contents of the sharedPtr
+   myPtr[0] = 5;
+   secondPtr[19] = 0x830;
+   cout<<"Value in allocated memory using myPtr: "<<myPtr[0]<<endl;
+   cout<<"Value in allocated memory using secondPtr: "<<secondPtr[19]<<". \nThis is the same value as in myPtr: "<<myPtr[19]<<endl;
+
+    // implicit data type conversion (works due to implicit conversion done by C++, not exclusive to smart pointers)
+    shared_ptr<int[]> twoPtr(new int[20]);
+    twoPtr[0] = 3.48;
+    cout<<"Two ptr when we try to improperly cast: " <<twoPtr[0]<<endl;
 
 }

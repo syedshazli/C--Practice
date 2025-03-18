@@ -24,7 +24,7 @@ int main(){
     arrPtr[2] = 200;
     cout<<"Value of 3rd element "<<arrPtr[2]<<endl;
     cout<<"Addy: "<<&arrPtr[2]<<endl;
-
+    
     delete[] arrPtr; // use delete [] if we want to delete array
 
 }

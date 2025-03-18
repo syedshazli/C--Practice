@@ -13,7 +13,7 @@ int main(){
 
     int a = 5;
     int *b = &a; // b is a pointer, pointing to memory address of an integer
-
+    
     // SO A POINTER NEEDS TO BE ASSIGNED TO A MEMORY ADDRESS, NOT JUST A NORMAL INT
     // And pointers need to be of same type as what you are pointing to
     cout<<"a = "<<a<<endl;
@@ -28,6 +28,8 @@ int main(){
     cout<<"X before Z changes it: "<<x<<endl; 
     int *z = &x;
     *z += 20;
+   // double *b = &x; NOTICE HOW THIS IS NOT ALLOWED DUE TO IMPROPER TYPES, ITS ALLOWED IN SMART POINTERS
+    
     cout<<"X after Z changes it "<<x<<endl;
 
 }
