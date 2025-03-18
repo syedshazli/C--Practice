@@ -9,7 +9,7 @@ struct myClass{
     bool isClean;
 };
 void uniquePtrFunc(unique_ptr<myClass> &myClassroom){
-    cout<<"Hello from the function!"
+    cout<<"Hello from the function!"<<endl;
     myClassroom->isClean = true;
    
 }
