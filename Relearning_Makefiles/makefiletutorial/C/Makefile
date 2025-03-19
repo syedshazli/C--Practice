@@ -22,3 +22,8 @@ blah.o: blah.c
 # runs first, no dependencies
 blah.c:
 	echo "int main() {return 0;}" > blah.c
+
+# removes blah.o and blah using make clean
+clean:
+	rm -f blah
+	rm -f blah.o
