@@ -8,5 +8,17 @@
 # pre req blah.c added so that we will recompile if blah.c modified
 # make decides if it should run the blah target. It will only run if blah does not exist, or blah.c is newer than blah
 # usually find out if timestamp is changed
-blah: blah.c
-	cc blah.c -o blah
+
+# run ./blah after this is done to get output of blah.c
+
+#runs third, requires blah.o target so it searches for it
+blah: blah.o
+	cc blah.o -o blah 
+
+# runs second, requires blah.c target so it searches for it
+blah.o: blah.c
+	cc -c blah.c -o blah.o 
+
+# runs first, no dependencies
+blah.c:
+	echo "int main() {return 0;}" > blah.c
