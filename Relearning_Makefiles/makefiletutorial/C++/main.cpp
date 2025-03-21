@@ -10,5 +10,6 @@ int main(){
     printFromRefer();
     cout<<endl;
     cout<<"Nice, it worked! Now let's try and get addition."<<endl;
-    getAddition(10, 20);
+    int result = getAddition(10, 20);
+    cout<<"Result of adding 10 and 20 was "<<result<<endl;
 }
