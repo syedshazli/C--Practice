@@ -1,4 +1,4 @@
-#include <refer.hpp>
+#include "refer.hpp"
 #include <iostream>
 
 using namespace std;
@@ -12,6 +12,3 @@ int getAddition(int a, int b){
     return a +b;
 }
 
-int main(){
-    
-}
