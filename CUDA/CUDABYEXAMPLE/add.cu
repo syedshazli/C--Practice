@@ -50,7 +50,6 @@ int main(void){
 
 	// reminder when passing in pointer without the *, it is just a memory address
 			
-	
 	// access memort on the device via calls to cudaMemcpy
 	// like C memcpy, one more parameter to specify source and destination pointers point to device memory
 	// in this example, we tell runtime the source pointer is device pointer, destination pointer is host pointer
@@ -61,12 +60,14 @@ int main(void){
 				dev_c,
 				sizeof(int),
 				cudaMemcpyDeviceToHost);
+	
+			
 	printf("2 + 7 = %d\n", c);
 	cudaFree(dev_c);
 
 	int count;
 	cudaGetDeviceCount(&count); // get count of cuda devices
-	
+	printf("count is %d", count);
 	return 0;
 
 
