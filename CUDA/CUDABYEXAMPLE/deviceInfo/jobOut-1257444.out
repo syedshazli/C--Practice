@@ -1,0 +1,16 @@
+Loading cudnn8.9-cuda12.2/8.9.7.29
+  Loading requirement: cuda12.2/toolkit/12.2.2
+---General informaiton for device---
+Name of GPU: NVIDIA A30
+Compute capability: 8and 0
+Clock rate: 1440000
+---Memory Information---
+Total global memory: 25341198336 bytes
+Total constant memory: 65536
+Max mem pitch: 2147483647
+---Multiprocessor Info for device 0
+Multiprocessor count: 56
+Shared memory per multiprocessor: 49152 bytes
+32 bit Registers per multiprocessor: 65536
+Threads in warp: 32
+Max threads per block: 1024
