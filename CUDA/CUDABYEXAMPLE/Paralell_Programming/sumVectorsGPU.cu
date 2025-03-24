@@ -15,6 +15,9 @@ __global__ void add(int *dev_a, int *dev_b, int *dev_c){
 	// for(int i = tid, i <tid+2, i++){if(tid<N{dev_c[tid] = ....}}
 	
 	int tid = blockIdx.x; // handle data @ this index
+	
+	printf("Hello from thread %d\n", tid);
+
 	if(tid < N){
 	
 		dev_c[tid] = dev_a[tid] + dev_b[tid];

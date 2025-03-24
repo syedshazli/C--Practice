@@ -1,5 +1,15 @@
 Loading cudnn8.9-cuda12.2/8.9.7.29
   Loading requirement: cuda12.2/toolkit/12.2.2
+Hello from thread 0
+Hello from thread 3
+Hello from thread 4
+Hello from thread 8
+Hello from thread 7
+Hello from thread 1
+Hello from thread 2
+Hello from thread 5
+Hello from thread 9
+Hello from thread 6
 0 + 0 = 0
 -1 + 1 = 0
 -2 + 4 = 2
