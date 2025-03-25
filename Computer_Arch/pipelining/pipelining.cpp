@@ -4,6 +4,25 @@
 #include <vector>
 using namespace std;
 
+
+/**
+     * Pipelining: The idea:
+     *                      1. Instruction execution is broken down into multiple sequential stages
+     *                      2. Multiple instructions processed simultanrously (each isntruction @ a different stage of pipeline)
+     *                      3. No need to wait for one instruction to complete all stages before starting the next one
+     *                      4. New instruction can begin at the same time
+     * 
+     * Stages of an instruction: 
+     *  1. Instruction Fetch
+     *  2. Instruction Decode
+     *  3. Execute
+     *  4. Memory Access 
+     *  5. Write Back (Store Result)
+     *         
+     * 
+     * So now what's our plan to simulate this?            
+    */
+
 int main(){
     
 }
