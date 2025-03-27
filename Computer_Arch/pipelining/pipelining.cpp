@@ -12,6 +12,7 @@ using namespace std;
      *                      3. No need to wait for one instruction to complete all stages before starting the next one
      *                      4. New instruction can begin at the same time
      * 
+     * 
      * Stages of an instruction: 
      *  1. Instruction Fetch
      *  2. Instruction Decode
@@ -20,9 +21,13 @@ using namespace std;
      *  5. Write Back (Store Result)
      *         
      * 
-     * So now what's our plan to simulate this?            
+     * So now what's our plan to simulate this? 
+     * Currently won't deal with issue of pipeline hazards/dependencies
+     * Create instruction objects, using all 6 instruction stages????           
     */
 
 int main(){
     
+
+
 }
