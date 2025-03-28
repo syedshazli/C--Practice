@@ -2,6 +2,8 @@
 #include <memory>
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <runningInstructions.hpp>
 using namespace std;
 
 
@@ -23,11 +25,16 @@ using namespace std;
      * 
      * So now what's our plan to simulate this? 
      * Currently won't deal with issue of pipeline hazards/dependencies
-     * Create instruction objects, using all 6 instruction stages????           
+     * Create instruction objects, using all 6 instruction stages????   
+     * A thread will allow us to simulate the different instructions        
     */
 
 int main(){
     
+    thread instruction1;
+    thread instruction2;
+    thread instruction3;
+
 
 
 }
