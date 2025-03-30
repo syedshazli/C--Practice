@@ -35,6 +35,6 @@ int main(){
     thread instruction2;
     thread instruction3;
 
-
+    startRunning(instruction1);
 
 }

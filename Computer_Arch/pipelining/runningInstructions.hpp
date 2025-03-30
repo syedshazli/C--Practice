@@ -1,3 +1,3 @@
 
 
-void startRunning();
+void startRunning(thread myThread);
