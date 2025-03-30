@@ -4,6 +4,7 @@
         "vector": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "memory": "cpp"
     }
 }
