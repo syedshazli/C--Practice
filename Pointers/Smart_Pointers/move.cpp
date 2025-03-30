@@ -37,8 +37,17 @@ int main(){
 
     // will become null now!
     cout<<"Ptr after move: "<<ptr.get()<<endl;
-    
+
     // will be the same memory address as the old ptr!
     cout<<"Ptr2 after move: "<<ptr2.get()<<endl;
 
+    // can also take memory from shared pointers
+    shared_ptr<int> myPtr(new int);
+    *myPtr = 5; // change value of whats stored in pointer
+     auto sharing = myPtr;
+     auto ptr3 = move(myPtr);
+    cout<<"Ptr 3 is now "<<ptr3.get()<<" and its value is "<<*ptr3<<endl;
+    cout<<"my shared pointer is now "<<myPtr.get()<<endl;
+    // still retains access because we didn't specify sharing in move()
+    cout<<"Sharing pointer is now: "<<sharing.get()<<endl;
 }
