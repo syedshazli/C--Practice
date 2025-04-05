@@ -22,29 +22,26 @@ struct Hamnah : Monkey{
     void startEating(int* matchas){
         // input is number of matches given
         // return how much matchas homind ate
-        cout<<"What the... why so many mathces.."  <<matchas<<"number of matchas to be exact"<<"Im going to eat them all!!"<<endl;
+        cout<<"What the... why so many mathces.."  <<*matchas<<"  matchas to be exact.."<<"Im going to eat them all!!"<<endl;
         
         int moneyUsed  = *matchas * 8;
         bankBalance -= moneyUsed;
         cout<<"Just spent $"<<moneyUsed<<" on useless matchas.. My bank account is now at $"<<bankBalance<<endl;
-        matchas = 0;
-        
+        *matchas = 0;
+        cout<<"I now only have "<<*matchas<<" left 😢"<<endl;
         
     }
 
     // return the number of hours scrolled on social media today
     int scroll(){
-        cout<<"It's time for me to scroll!!!📱"<<endl;
+       
         return 1000*5;
 
 
     }
 
 
-    void diddy(){
 
-        cout<<"Time to diddy uzair...😈😈😈"<<endl;
-    }
 
     void spendMoney(){
         cout<<"Hey friends! God gave me money to spend! We only live once, never save..."<<endl;
@@ -55,7 +52,7 @@ struct Hamnah : Monkey{
 
     void sleep(int freeTime){
         cout<<"Phew, that was a lot of work for the day, lots of eating, MOTW, and scrolling, time to sleep!!"<<endl;
-        cout<<"Just slept for "<<freeTime<<" hours!"<<endl;
+        cout<<"Just slept for "<<freeTime<<" hours!😴"<<endl;
     }
 
     void askForLoan(){
@@ -80,23 +77,29 @@ int main(){
     planetEarthHomind.bankBalance = 901;
 
     planetEarthHomind.makeAnnoyingNoises();
+    cout<<endl;
     planetEarthHomind.speak();
-
+    cout<<endl;
     int matchas;
 
     matchas = 30;
     planetEarthHomind.startEating(&matchas);
+    cout<<endl;
     planetEarthHomind.spendMoney();
+    cout<<endl;
 
     if(planetEarthHomind.bankBalance < 1000){
         planetEarthHomind.askForLoan();
     }
+    cout<<endl;
 
-    cout<<"Scrolled for "<<planetEarthHomind.scroll()<<" hours"<<endl;
+    cout<<"Scrolled for "<<planetEarthHomind.scroll()<<" hours📱"<<endl;
+    cout<<endl;
     planetEarthHomind.sleep(9);
+    cout<<endl;
 
    
-    planetEarthHomind.diddy();
+
     
 
 
