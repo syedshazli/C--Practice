@@ -26,7 +26,13 @@ using namespace std;
      * So now what's our plan to simulate this? 
      * Currently won't deal with issue of pipeline hazards/dependencies
      * Create instruction objects, using all 6 instruction stages????   
-     * A thread will allow us to simulate the different instructions        
+     * A thread will allow us to simulate the different instructions       
+     * Just because things are running at the same time doesn't mean it needs to be a thread
+     * 
+     * 
+     * The clock is the synchronization method
+     * After one clock cycle, we move on to a new instruction
+     * 
     */
 
 int main(){
