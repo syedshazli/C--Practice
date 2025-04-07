@@ -1,6 +1,6 @@
-
+#include <iostream>
 #define N 20
-
+using namespace std;
 
 __global__ void add(int *a, int *b, int *c){
 
@@ -32,9 +32,28 @@ int main(void){
 	}
 
 
-	// copy arrays a and b to the GPU
+	// copy arrays a and b to the GPU using cudamemcpy
+
+	cudaMemcpy(device_a, a, N*sizeof(int), cudaMemcpyHostToDevice );
+	cudaMemcpy(device_b, b, N*sizeof(int), cudaMemcpyHostToDevice);
+
+	// compute the addition
+	add<<<1,N>>>(device_a, device_b, device_c);
+
+	// copy array c from GPU to CPu so we can view results
+	cudaMemcpy(c, device_c, N*sizeof(int), cudaMemcpyDeviceToHost);
+
+	for(int i = 0; i<N; i++){
+	
+		cout<<a[i]<< " + "<<b[i] <<" = "<<c[i]<<endl;
+	}
 
 
+
+	cudaFree(device_a);
+	cudaFree(device_b);
+	cudaFree(device_c);
+	return 0;
 	}
 
 
