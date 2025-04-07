@@ -22,7 +22,7 @@ int main(void){
 
 	//allocate memory on the device
 	cudaMalloc( (void**)&device_a, N*sizeof(int)  );
-	cudaMalloc( (void**)&device_b, N & sizeof(int)  );
+	cudaMalloc( (void**)&device_b, N* sizeof(int)  );
 	cudaMalloc( (void**)&device_c, N*sizeof(int) );
 
 	for(int i = 0; i<N; i++){
@@ -38,6 +38,7 @@ int main(void){
 	cudaMemcpy(device_b, b, N*sizeof(int), cudaMemcpyHostToDevice);
 
 	// compute the addition
+	// 1 thread block, 20 threads on the block
 	add<<<1,N>>>(device_a, device_b, device_c);
 
 	// copy array c from GPU to CPu so we can view results
