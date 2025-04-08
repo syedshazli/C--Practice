@@ -11,10 +11,21 @@ struct myClass{
 };
 
 struct doBetter{
-
     int abc;
     int def;
-    auto operator <=>(const doBetter &mydoBetter) const = default;
+
+    doBetter(int newAbc, int newDef) : abc(newAbc), def(newDef) {}
+
+    auto operator+(const doBetter &mydoBetter){
+        return doBetter(abc + mydoBetter.abc, def+mydoBetter.def );
+    }
+
+    void print(){
+        cout<<"ABC == "<<abc<<endl;
+        cout<<"DEF == "<<def<<endl;
+        cout<<endl;
+    }
+
 };
 
 int main(){
@@ -27,5 +38,13 @@ int main(){
     cout << (class1 == class2) <<endl;
     cout << (class1 < class2) <<endl;
     cout << (class1 > class2) <<endl;
+
+    cout<<endl;
+    doBetter myAlph {123, 456};
+    doBetter secondAlph {789,101112};
+
+    doBetter resultObj = myAlph+secondAlph;
+    resultObj.print();
+
     return 0;
 }
