@@ -2,6 +2,12 @@
 
 using namespace std;
 
+void pointMe(int *aNum){
+    cout<<"aNum is "<<aNum<<endl;
+    cout<<"*anum is "<<*aNum<<endl;
+    cout<<"&anum is "<<&aNum<<endl;
+}
+
 int main(){
     // & is address of operator
     // good to get address of an integer and pass by reference
@@ -32,4 +38,9 @@ int main(){
     
     cout<<"X after Z changes it "<<x<<endl;
 
+    cout<<endl;
+    int myNumber = 5;
+    int *pointToMyNum = &myNumber;
+    // function asks for type pointer
+    pointMe(pointToMyNum);
 }
