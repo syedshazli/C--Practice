@@ -18,6 +18,8 @@ struct doBetter{
 };
 
 int main(){
+    // to compike: g++ defaultComparisons.cpp -o dc --std=c++20
+
     myClass class1 {1,2}; // aggregate initialisation
     myClass class2 {1, 2};
     // will compare a and b of both objects
