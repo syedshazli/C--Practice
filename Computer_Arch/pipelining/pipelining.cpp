@@ -1,9 +1,7 @@
 #include <thread>
-#include <memory>
 #include <iostream>
 #include <vector>
 #include <thread>
-#include <mutex>
 #include <runningInstructions.hpp>
 #include <clock.hpp>
 using namespace std;
@@ -44,7 +42,9 @@ int main(){
     thread instruction3;
 
     startClock(); // clock will run, each cycle is 1 second
-    //
-    startRunning(instruction1);
+    
+    startRunning(instruction1, 1);
+    startRunning(instruction2, 2);
+    startRunning(instruction3, 3);
 
 }
