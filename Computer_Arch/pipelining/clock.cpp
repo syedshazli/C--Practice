@@ -3,6 +3,11 @@
 #include <iostream>
 using namespace std;
 // simulate a clock cycle running and instructions being run based on the clock cycle
+
+void waitOneClockCycle(){
+    this_thread::sleep_for (chrono::seconds(1)); 
+}
+
 void startClock(){
     int i = 0;
     while (i<20){

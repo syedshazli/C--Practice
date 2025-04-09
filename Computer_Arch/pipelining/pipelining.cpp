@@ -41,7 +41,7 @@ int main(){
     thread instruction2;
     thread instruction3;
 
-    startClock(); // clock will run, each cycle is 1 second
+    //startClock(); // clock will run, each cycle is 1 second
     
     startRunning(instruction1, 1);
     startRunning(instruction2, 2);
