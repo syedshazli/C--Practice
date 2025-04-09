@@ -5,7 +5,7 @@ using namespace std;
 // simulate a clock cycle running and instructions being run based on the clock cycle
 void startClock(){
     int i = 0;
-    while (true){
+    while (i<20){
         cout<<"START OF CLOCK CYCLE "<<i<<endl;
         // start running a clock to simulate running a clock cycle, freeze for like 5 seconds?
         this_thread::sleep_for (chrono::seconds(1)); 

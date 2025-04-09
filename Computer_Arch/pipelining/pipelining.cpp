@@ -5,6 +5,7 @@
 #include <thread>
 #include <mutex>
 #include <runningInstructions.hpp>
+#include <clock.hpp>
 using namespace std;
 
 
@@ -42,7 +43,8 @@ int main(){
     thread instruction2;
     thread instruction3;
 
-    mutex accessToExecution;
+    startClock(); // clock will run, each cycle is 1 second
+    //
     startRunning(instruction1);
 
 }
