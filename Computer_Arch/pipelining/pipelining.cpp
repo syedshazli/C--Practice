@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <mutex>
 #include <runningInstructions.hpp>
 using namespace std;
 
@@ -41,6 +42,7 @@ int main(){
     thread instruction2;
     thread instruction3;
 
+    mutex accessToExecution;
     startRunning(instruction1);
 
 }
