@@ -1,14 +1,14 @@
 #include <iostream>
-#define N 20
+#define N (20*487)
 using namespace std;
 
 __global__ void add(int *a, int *b, int *c, int *d){
 
-	int threadID  = threadIdx.x;
-	if(threadID < N){
+	int threadID  = threadIdx.x + blockIdx.x * blockDim.x;
+	while(threadID < N){
 	
 		c[threadID] = (a[threadID] + b[threadID]) * d[threadID];
-	
+		threadID += blockDim.x * gridDim.x;
 	}
 
 	}
@@ -42,16 +42,31 @@ int main(void){
 
 	// compute the addition
 	// 1 thread block, 20 threads on the block
-	add<<<1,N>>>(device_a, device_b, device_c, device_d);
+	add<<<128,128>>>(device_a, device_b, device_c, device_d);
 
 	// copy array c from GPU to CPu so we can view results
 	cudaMemcpy(c, device_c, N*sizeof(int), cudaMemcpyDeviceToHost);
 
+	bool success = true;
 	for(int i = 0; i<N; i++){
-	
-		cout<<a[i]<< " + "<<b[i] <<" * "<<d[i]<<" = "<<c[i]<<endl;
-	}
+		
+		if ( (a[i] + b[i] ) * d[i] !=c[i]){
+		cout<<"ERROR!!!"<<endl;
+		success = false;
+		}
 
+		//cout<<a[i]<< " + "<<b[i] <<" * "<<d[i]<<" = "<<c[i]<<endl;
+	}
+	
+	if(success){
+	cout<<"We did itttt"<<endl;
+	}
+	
+	// print last 10 elements
+	 for(int i = N-20; i<N; i++){
+
+
+               cout<<a[i]<< " + "<<b[i] <<" * "<<d[i]<<" = "<<c[i]<<endl;        }
 
 
 	cudaFree(device_a);
