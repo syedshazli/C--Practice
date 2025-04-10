@@ -50,6 +50,8 @@ int main(){
     // createThreeInstructions
     // execute first instruction
     // once first instruction is past fetch, execute next instruction
+    // each instruction finishes a stage every clock cycle
+    // the CPU (main function) has to control when other functions start running
     startRunning(instruction1, 1); 
     startRunning(instruction2, 2);
     startRunning(instruction3, 3);
