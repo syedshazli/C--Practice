@@ -55,12 +55,12 @@ struct Instruction{
             cout<<"Running instruction "<<instructionNumber<<" in which the current stage is "<<listOfStages[0];
             listOfStages.pop_front(); // finished executing the current stage
         }
-
+    cout<<"Instruction "<<instructionNumber<<" finished executing!"<<endl;
     }
 
 };
 
-void startRunning(thread myInstruction, int i){
+void startRunning( thread myInstruction, int i){
     Instruction I1;
    // I1.addInstructions(I1.runInstructions); // input--> Vector that is to be filled with threads
     // each instruction now has a vector of execution stages ready to run

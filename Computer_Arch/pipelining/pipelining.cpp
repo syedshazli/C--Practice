@@ -2,8 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <thread>
-#include <runningInstructions.hpp>
-#include <clock.hpp>
+#include "runningInstructions.hpp"
+#include "clock.hpp"
 using namespace std;
 
 
@@ -40,10 +40,17 @@ int main(){
     thread instruction1;
     thread instruction2;
     thread instruction3;
-
+    instruction1.detach();
+    instruction2.detach();
+    instruction3.detach();
     //startClock(); // clock will run, each cycle is 1 second
-    
-    startRunning(instruction1, 1);
+    // main functions as the CPU
+    // in each startRunning, check if front of queue for instruction i-1 is != fetch
+
+    // createThreeInstructions
+    // execute first instruction
+    // once first instruction is past fetch, execute next instruction
+    startRunning(instruction1, 1); 
     startRunning(instruction2, 2);
     startRunning(instruction3, 3);
 
