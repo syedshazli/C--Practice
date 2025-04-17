@@ -7,7 +7,7 @@ using namespace std;
 mutex myMutex;
 mutex intAccess;
 
-void printTID(int tid, int *intIncrement){
+void printTID(int tid, int &intIncrement){
     // if a thread has locked the mutex alr, we wait till the other thread is done
     // note that we enter deadlock if we never unlock!
 
@@ -17,8 +17,8 @@ void printTID(int tid, int *intIncrement){
 
     // if using lock guard, we don't need lock or unlock methods
     lock_guard<mutex> lg(intAccess);
-    //intIncrement+=1;
-    //cout<<intIncrement<<endl;
+    // intIncrement+=1;
+    // cout<<intIncrement<<endl;
     myMutex.lock();    
     cout<<"I'm thread #"<<tid+1<<endl;
     myMutex.unlock();
@@ -33,10 +33,10 @@ int main(){
     // mutex prevents shared data from being simulatenously accessed (OS)
     
     vector<thread> arrayThreads(6);
-    int *incrementInt = 0;
+    int incrementInt = 0;
     for(int i = 0; i<arrayThreads.size(); i++){
         // orderings of prints may differ, which is ok
-        arrayThreads[i] = thread(printTID, i, &incrementInt); 
+        arrayThreads[i] = thread(printTID, i, incrementInt); 
     }
 
     for(int i = 0; i<arrayThreads.size(); i++){

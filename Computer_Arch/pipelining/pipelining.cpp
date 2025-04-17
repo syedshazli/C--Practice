@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <deque>
+#include <queue>
 #include "runningInstructions.hpp"
 #include "clock.hpp"
 using namespace std;
@@ -31,29 +33,56 @@ using namespace std;
      * 
      * 
      * The clock is the synchronization method
-     * After one clock cycle, we move on to a new instruction
-     * 
+     * After one clock cycle, we:
+     *  1. Add a new instruction to a 'running array'
+     *  2. Move each instruction in the 'running array to the next stage'
+     *  3. If we've reached the last step of the instruction, pop from the 'running array'
     */
 
 int main(){
     
-    thread instruction1;
-    thread instruction2;
-    thread instruction3;
-    instruction1.detach();
-    instruction2.detach();
-    instruction3.detach();
+   
     //startClock(); // clock will run, each cycle is 1 second
     // main functions as the CPU
     // in each startRunning, check if front of queue for instruction i-1 is != fetch
 
-    // createThreeInstructions
-    // execute first instruction
-    // once first instruction is past fetch, execute next instruction
-    // each instruction finishes a stage every clock cycle
-    // the CPU (main function) has to control when other functions start running
-    startRunning(instruction1, 1); 
-    startRunning(instruction2, 2);
-    startRunning(instruction3, 3);
+    // these instructions are waiting to be run
+    queue <Instruction> waiting;
+
+    Instruction i1;
+    Instruction i2;
+    Instruction i3;
+    Instruction i4;
+    Instruction i5;
+    waiting.push(i1);
+    waiting.push(i2);
+    waiting.push(i3);
+    waiting.push(i4);
+    waiting.push(i5);
+
+    // create a queue of instructions that are currently running
+    deque<Instruction> runningInstruction;
+    int clockCycleLength = 18;
+    for (int clock = 0; clock < clockCycleLength; clock++){
+
+        // push whatever is on top of the queue
+        Instruction currentInstruction = waiting.front();
+        // instruction is no longer waiting
+        waiting.pop();
+        // instruction is now Running
+        runningInstruction.emplace_back(currentInstruction);
+
+        for(auto currentInstruction : runningInstruction){
+            if(currentInstruction.instructionSequences.size() != 0){
+                currentInstruction.moveToNextStage(currentInstruction.instructionSequences);
+            }
+            else{
+                // current instruction is done running
+                runningInstruction.pop_front();
+            }
+
+        }
+
+    }
 
 }
