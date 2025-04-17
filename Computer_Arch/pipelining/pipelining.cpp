@@ -4,8 +4,8 @@
 #include <thread>
 #include <deque>
 #include <queue>
-#include "runningInstructions.hpp"
-#include "clock.hpp"
+#include "runningInstructions.cpp"
+//#include "clock.hpp"
 using namespace std;
 
 
@@ -68,16 +68,21 @@ int main(){
         // push whatever is on top of the queue
         Instruction currentInstruction = waiting.front();
         // instruction is no longer waiting
+        if(waiting.size() != 0 ){
+        Instruction currentInstruction = waiting.front();
         waiting.pop();
+        }
+
         // instruction is now Running
         runningInstruction.emplace_back(currentInstruction);
 
+        // for each instruction that is running, move the instruction to the next stage
         for(auto currentInstruction : runningInstruction){
             if(currentInstruction.instructionSequences.size() != 0){
-                currentInstruction.moveToNextStage(currentInstruction.instructionSequences);
+                currentInstruction.moveToNextStage(currentInstruction.instructionSequences, clock);
             }
             else{
-                // current instruction is done running
+                // current instruction is done running, pop it from running
                 runningInstruction.pop_front();
             }
 

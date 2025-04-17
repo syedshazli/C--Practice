@@ -4,8 +4,8 @@
 #include <deque>
 #include <vector>
 #include <string>
-#include "runningInstructions.hpp"
-#include "clock.hpp"
+//#include "runningInstructions.hpp"
+//#include "clock.hpp"
 
 using namespace std;
 
@@ -26,27 +26,34 @@ struct Instruction{
          instructionSequences.push_back("instructionDecode");
          instructionSequences.push_back("instructionExecute");
          instructionSequences.push_back("instructionAccess");
-        instructionSequences.push_back("instructionStore");
+         instructionSequences.push_back("instructionStore");
     }
-    
+     
 
     
     // add all 5 instructions to runInstructions buffer
     // benefit of including a thread???
     //  benefit is we can execute code inside the thread
 
-    void moveToNextStage(deque<string> instructionSequences){
+    void moveToNextStage(deque<string> instructionSequences, int clock){
         instructionSequences.pop_front();
         if(instructionSequences.size() != 0){
-            cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage"<<endl;
+            cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
         }
     }
+
+    string getCurrentInstruction(deque<string> instructionSequences){
+            return instructionSequences.front();
+    }
+
+
+    };
 
   
   
     
 
-};
+
 
 
 

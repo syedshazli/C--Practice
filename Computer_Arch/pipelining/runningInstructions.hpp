@@ -10,7 +10,7 @@ using namespace std;
 struct Instruction{
 deque<string> instructionSequences;
     // define constructor in .hpp file
-    Instruction::Instruction(){
+    Instruction(){
         
          instructionSequences.push_back("instructionFetch");
          instructionSequences.push_back("instructionDecode");
