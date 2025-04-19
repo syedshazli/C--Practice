@@ -64,21 +64,24 @@ int main(){
     deque<Instruction> runningInstruction;
     int clockCycleLength = 18;
     for (int clock = 0; clock < clockCycleLength; clock++){
-
+        
         // push whatever is on top of the queue
-        Instruction currentInstruction = waiting.front();
+        
         // instruction is no longer waiting
         if(waiting.size() != 0 ){
+            // this is a completly new instruction... not the same as the waiting instruction!
         Instruction currentInstruction = waiting.front();
         waiting.pop();
-        }
-
         // instruction is now Running
         runningInstruction.emplace_back(currentInstruction);
+        }
+
+        
 
         // for each instruction that is running, move the instruction to the next stage
         for(auto currentInstruction : runningInstruction){
             if(currentInstruction.instructionSequences.size() != 0){
+                // might need to pass by reference
                 currentInstruction.moveToNextStage(currentInstruction.instructionSequences, clock);
             }
             else{

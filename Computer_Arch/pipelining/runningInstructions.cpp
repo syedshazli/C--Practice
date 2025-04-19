@@ -35,7 +35,7 @@ struct Instruction{
     // benefit of including a thread???
     //  benefit is we can execute code inside the thread
 
-    void moveToNextStage(deque<string> instructionSequences, int clock){
+    void moveToNextStage(deque<string> &instructionSequences, int clock){
         instructionSequences.pop_front();
         if(instructionSequences.size() != 0){
             cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
