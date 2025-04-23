@@ -78,15 +78,11 @@ int main(){
         
 
         // for each instruction that is running, move the instruction to the next stage
-        for(Instruction currentInstruction : runningInstruction){
-            for(string sequences: currentInstruction.instructionSequences){
-                cout<<"Instructions for clock cycle "<<clock << ": "<<sequences<<"\n";
-            }
+        // To ensure we're passing by ref, include the memory address of each isntead of making a new instruction
+        for(Instruction &currentInstruction : runningInstruction){
+           
             if(currentInstruction.instructionSequences.size() != 0){
-                // might need to pass by reference
-                // hit it with & but getting the lvalue issue, find nick video
-               // deque<string> *pointerToIns = &currentInstruction.instructionSequences;
-               // currently not passing by reference properly, we don't see anything getting popped
+                // pass by reference (function takes in memory address)
                moveToNextStage(currentInstruction.instructionSequences, clock);
             }
             else{

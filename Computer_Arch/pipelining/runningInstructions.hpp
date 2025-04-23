@@ -1,8 +1,8 @@
-#ifndef RUNNING_INSTRUCTIONS_HPP
-#define RUNNING_INSTRUCTIONS_HPP
-#include <iostream>
+// #ifndef RUNNING_INSTRUCTIONS_HPP
+// #define RUNNING_INSTRUCTIONS_HPP
+#pragma once
+
 #include <deque>
-#include <vector>
 #include <string>
 
 using namespace std;
@@ -25,4 +25,4 @@ deque<string> instructionSequences;
 
 void moveToNextStage(deque<string> &instructionSequences, int clock);
 
-#endif
+
