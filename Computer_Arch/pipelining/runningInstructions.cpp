@@ -19,7 +19,7 @@ struct Instruction{
     // constructor for instruction class --> Creates a deque of instructionSequeunces and initialises with all stages
     
     deque<string> instructionSequences;
-    
+    // constructor which appends each step to a deque
     Instruction(){
         
          instructionSequences.push_back("instructionFetch");
@@ -35,23 +35,27 @@ struct Instruction{
     // benefit of including a thread???
     //  benefit is we can execute code inside the thread
 
-    void moveToNextStage(deque<string> &instructionSequences, int clock){
-        instructionSequences.pop_front();
-        if(instructionSequences.size() != 0){
-            cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
-        }
-    }
 
     string getCurrentInstruction(deque<string> instructionSequences){
             return instructionSequences.front();
     }
 
 
+        void moveToNextStage(deque<string> &instructionSequences, int clock){
+        instructionSequences.pop_front();
+        if(instructionSequences.size() != 0){
+            cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
+        }
+    }
+
+      
+
     };
 
   
   
-    
+
+
 
 
 

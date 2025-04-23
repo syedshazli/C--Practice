@@ -83,8 +83,8 @@ int main(){
             if(currentInstruction.instructionSequences.size() != 0){
                 // might need to pass by reference
                 // hit it with & but getting the lvalue issue, find nick video
-                deque<string> *pointerToIns = &currentInstruction.instructionSequences;
-                currentInstruction.moveToNextStage(*pointerToIns, clock);
+               // deque<string> *pointerToIns = &currentInstruction.instructionSequences;
+               currentInstruction.moveToNextStage(currentInstruction.instructionSequences, clock);
             }
             else{
                 // current instruction is done running, pop it from running
