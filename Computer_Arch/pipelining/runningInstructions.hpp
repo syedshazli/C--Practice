@@ -1,10 +1,10 @@
+#ifndef RUNNING_INSTRUCTIONS_HPP
+#define RUNNING_INSTRUCTIONS_HPP
 #include <iostream>
-#include <memory>
-#include <thread>
 #include <deque>
 #include <vector>
 #include <string>
-#include "clock.hpp"
+
 using namespace std;
 
 struct Instruction{
@@ -19,7 +19,10 @@ deque<string> instructionSequences;
         instructionSequences.push_back("instructionStore");
     };
    
-    void moveToNextStage(deque<string> instructionSequences);
-    void addInstructionsString(deque<string> instructionSequences);
+    
+    void getCurrentInstruction(deque<string> instructionSequences);
 };
 
+void moveToNextStage(deque<string> &instructionSequences, int clock);
+
+#endif

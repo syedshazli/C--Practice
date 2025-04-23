@@ -1,10 +1,9 @@
-#include <thread>
 #include <iostream>
 #include <vector>
-#include <thread>
+#include <string>
 #include <deque>
 #include <queue>
-#include "runningInstructions.cpp"
+#include "runningInstructions.hpp"
 //#include "clock.hpp"
 using namespace std;
 
@@ -79,12 +78,16 @@ int main(){
         
 
         // for each instruction that is running, move the instruction to the next stage
-        for(auto currentInstruction : runningInstruction){
+        for(Instruction currentInstruction : runningInstruction){
+            for(string sequences: currentInstruction.instructionSequences){
+                cout<<"Instructions for clock cycle "<<clock << ": "<<sequences<<"\n";
+            }
             if(currentInstruction.instructionSequences.size() != 0){
                 // might need to pass by reference
                 // hit it with & but getting the lvalue issue, find nick video
                // deque<string> *pointerToIns = &currentInstruction.instructionSequences;
-               currentInstruction.moveToNextStage(currentInstruction.instructionSequences, clock);
+               // currently not passing by reference properly, we don't see anything getting popped
+               moveToNextStage(currentInstruction.instructionSequences, clock);
             }
             else{
                 // current instruction is done running, pop it from running

@@ -1,10 +1,8 @@
 #include <iostream>
-#include <memory>
-#include <thread>
 #include <deque>
 #include <vector>
 #include <string>
-//#include "runningInstructions.hpp"
+#include "runningInstructions.hpp"
 //#include "clock.hpp"
 
 using namespace std;
@@ -41,12 +39,7 @@ struct Instruction{
     }
 
 
-        void moveToNextStage(deque<string> &instructionSequences, int clock){
-        instructionSequences.pop_front();
-        if(instructionSequences.size() != 0){
-            cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
-        }
-    }
+        
 
       
 
@@ -54,10 +47,15 @@ struct Instruction{
 
   
   
+void moveToNextStage(deque<string> &instructionSequences, int clock){
+        instructionSequences.pop_front();
+        for(auto instruction : instructionSequences){
+            //cout<<"Instructions for clock cycle "<<clock << ": "<<instruction<<"\n";
+        }
+        cout<<endl;
+        // if(instructionSequences.size() != 0){
+        //     cout<<"I'm moving on to the "<<instructionSequences.front()<<" stage at clock cycle "<<clock<<endl;
+        // }
 
 
-
-
-
-
-
+    }
