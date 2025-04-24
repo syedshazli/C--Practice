@@ -62,6 +62,7 @@ int main(){
     // create a queue of instructions that are currently running
     deque<Instruction> runningInstruction;
     int clockCycleLength = 18;
+    int barrierForChecking  = 0;
     for (int clock = 0; clock < clockCycleLength; clock++){
         
         // push whatever is on top of the queue
@@ -87,11 +88,16 @@ int main(){
             }
             else{
                 // current instruction is done running, pop it from running
+                barrierForChecking+=1;
                 runningInstruction.pop_front();
             }
 
         }
-
+        // 5 because that's how many instructions we needed to run
+        if(barrierForChecking == 5){
+            cout<<"Finished all instructions at clock cycle "<<clock<<endl;
+            barrierForChecking-=1; // prevents this from printing in other clocl cycles
+        }
     }
 
 }

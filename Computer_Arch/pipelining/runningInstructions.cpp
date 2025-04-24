@@ -50,7 +50,7 @@ struct Instruction{
 void moveToNextStage(deque<string> &instructionSequences, int clock){
         instructionSequences.pop_front();
         for(auto instruction : instructionSequences){
-            cout<<"Instructions for clock cycle "<<clock << ": "<<instruction<<"\n";
+            cout<<"Instructions remaining for clock cycle "<<clock << ": "<<instruction<<"\n";
         }
         cout<<endl;
         // if(instructionSequences.size() != 0){
