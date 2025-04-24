@@ -15,7 +15,7 @@ constexpr int factorial(int n){
 int main(){
 
     std::random_device rd;
-    constexpr intRes = factorial(6);
+    constexpr int intRes = factorial(6);
     int result = factorial(rd() % 6); // random numbers can only be generated at run time, not compile time
     std::cout<<result<<'\n';
 
