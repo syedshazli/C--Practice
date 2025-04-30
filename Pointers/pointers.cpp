@@ -37,7 +37,7 @@ int main(){
    // double *b = &x; NOTICE HOW THIS IS NOT ALLOWED DUE TO IMPROPER TYPES, ITS ALLOWED IN SMART POINTERS
     
     cout<<"X after Z changes it "<<x<<endl;
-
+  
     cout<<endl;
     int myNumber = 5;
     int *pointToMyNum = &myNumber;
