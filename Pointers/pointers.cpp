@@ -8,6 +8,11 @@ void pointMe(int *aNum){
     cout<<"&anum is "<<&aNum<<endl;
 }
 
+void pointMeArray(int *aNum){
+    cout<<"aNum is "<<aNum[0]<<endl;
+    cout<<"&anum is "<<&aNum[0]<<endl;
+}
+
 int main(){
     // & is address of operator
     // good to get address of an integer and pass by reference
@@ -16,6 +21,12 @@ int main(){
     // int a = 5;
     // int &b = a; // reference to a. if we change b or a we are changing whats in memory location of a
     // what if we want to store address of a?
+
+    // pointers to arrays with pbr works for passing in pointers and the arrays themselves
+    int myArrayForPointer[] = {1, 2, 3};
+    int* pointertoArr = myArrayForPointer;
+    pointMeArray(pointertoArr);
+    pointMeArray(myArrayForPointer);
 
     int a = 5;
     int *b = &a; // b is a pointer, pointing to memory address of an integer
