@@ -10,7 +10,7 @@ void matmul(int A[4][4], int B[4][4], int C[4][4], int N){
             int value = 0;
             for(int tryCols = 0; tryCols < N; tryCols++){
                 
-                value+= A[row+tryCols][col] * B[row][col+tryCols]; // iterate thru matmul
+                value+= A[row][col+tryCols] * B[row+tryCols][col]; // iterate thru matmul
 
 
             }
@@ -47,7 +47,7 @@ int main(){
     for(int row  = 0; row <4; row++ ){
         for(int col = 0; col<4; col++){//c++ XD
 
-        cout<<c[row][col];
+        cout<<c[row][col]<<' ';
 
 
         }
