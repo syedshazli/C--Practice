@@ -24,8 +24,8 @@ int main(){
 
     // pointers to arrays with pbr works for passing in pointers and the arrays themselves
     int myArrayForPointer[] = {1, 2, 3};
-    int* pointertoArr = myArrayForPointer;
-    pointMeArray(pointertoArr);
+    int* pointerToArr = myArrayForPointer;
+    pointMeArray(pointerToArr);
     pointMeArray(myArrayForPointer);
 
     int a = 5;
