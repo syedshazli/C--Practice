@@ -7,7 +7,11 @@ void matmul(int A[4][4], int B[4][4], int C[4][4], int N){
     
     for(int row = 0; row < N; row++){
         for(int col = 0; col<N; col++){
+
             int value = 0;
+
+            // col = 3, tryCols = 3.. what happens??? --> This is OOB
+
             for(int tryCols = 0; tryCols < N; tryCols++){
                 
                 value+= A[row][col+tryCols] * B[row+tryCols][col]; // iterate thru matmul
