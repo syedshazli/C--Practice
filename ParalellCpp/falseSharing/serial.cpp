@@ -25,7 +25,7 @@ int main(){
 
     };
 
-    std::vector<std::thread> threads;
+    std::vector<std::jthread> threads;
     for(int i = 0; i<numThreads; i++){
         // spawn threads by creating a thread in the array of threads to do work
         threads.emplace_back(work);
