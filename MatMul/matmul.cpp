@@ -14,7 +14,7 @@ void matmul(int A[4][4], int B[4][4], int C[4][4], int N){
 
             for(int tryCols = 0; tryCols < N; tryCols++){
                 
-                value+= A[row][col+tryCols] * B[row+tryCols][col]; // iterate thru matmul
+                value+= A[row][tryCols] * B[tryCols][col]; // iterate thru matmul
 
 
             }
