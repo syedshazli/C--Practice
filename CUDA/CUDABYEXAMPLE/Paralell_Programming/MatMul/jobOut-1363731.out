@@ -1,0 +1,37 @@
+Loading cudnn8.9-cuda12.2/8.9.7.29
+  Loading requirement: cuda12.2/toolkit/12.2.2
+matmul.cu(17): warning #20096-D: address of a host variable "std::cout" cannot be directly taken in a device function
+    cout<<"row is "<<row<<" and col is "<<col<<endl;
+    ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+matmul.cu(17): error: calling a __host__ function("std::basic_ostream<char, std::char_traits<char> >::operator <<(::std::basic_ostream<char, std::char_traits<char> >&(*)(::std::basic_ostream<char, std::char_traits<char> >&))") from a __global__ function("matmul") is not allowed
+
+matmul.cu(17): error: identifier "std::basic_ostream<char, std::char_traits<char> >::operator <<" is undefined in device code
+
+matmul.cu(17): error: calling a __host__ function("std::basic_ostream<char, std::char_traits<char> >::operator <<(int)") from a __global__ function("matmul") is not allowed
+
+matmul.cu(17): error: identifier "std::basic_ostream<char, std::char_traits<char> >::operator <<" is undefined in device code
+
+matmul.cu(17): error: calling a __host__ function("std::basic_ostream<char, T1>  &  ::std::operator <<<    ::std::char_traits<char> > (    ::std::basic_ostream<char, T1>  &, const char *)") from a __global__ function("matmul") is not allowed
+
+matmul.cu(17): error: identifier "std::operator <<<    ::std::char_traits<char> > " is undefined in device code
+
+matmul.cu(17): error: calling a __host__ function("std::basic_ostream<char, std::char_traits<char> >::operator <<(int)") from a __global__ function("matmul") is not allowed
+
+matmul.cu(17): error: identifier "std::basic_ostream<char, std::char_traits<char> >::operator <<" is undefined in device code
+
+matmul.cu(17): error: calling a __host__ function("std::basic_ostream<char, T1>  &  ::std::operator <<<    ::std::char_traits<char> > (    ::std::basic_ostream<char, T1>  &, const char *)") from a __global__ function("matmul") is not allowed
+
+matmul.cu(17): error: identifier "std::operator <<<    ::std::char_traits<char> > " is undefined in device code
+
+matmul.cu(17): error: identifier "std::cout" is undefined in device code
+
+matmul.cu(17): error: identifier "std::endl<char,     ::std::char_traits<char> > " is undefined in device code
+
+12 errors detected in the compilation of "matmul.cu".
+-17456 32767 1431696046 0 
+5 0 1432177229 21845 
+-136822040 32767 1432177152 21845 
+0 0 1431694064 21845 
