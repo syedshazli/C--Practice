@@ -62,12 +62,13 @@ int main(){
 
 
 	for(int row  = 0; row <4; row++ ){
+		
      	   for(int col = 0; col<4; col++){//c++ XD
 
-        	cout<<host_c[row][col]<<' ';
-
+        	cout<<host_c[row][col]<<','<<' ';
 
         }
         cout<<endl;
     }
+	
 }
