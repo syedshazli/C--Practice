@@ -47,14 +47,22 @@ int main(){
 	0, 0, 0, 0,
 	};
 
-	int (*dev_c)[4];
-	dev_c = c;
+	int (*dev_c)[4];// points to the first row of the array, each row has 4 ints
+	dev_c = c; // dev_c points to the 2d array c
 
 	// allocate with CUDA MALLOC
 	cudaMalloc( (void**) &dev_c, sizeof(c));
+	
+	int(*dev_a)[4];
+	dev_a = a;
+	
+	int(*dev_b)[4];
+	dev_b = b;
 
+	cudaMalloc( (void**) &dev_a, sizeof(a)  );
+	cudaMalloc((void**) &dev_b, sizeof(b) );
 	// 4 blocks, 4 threads per block
-	matmul<<<4,4>>> (a,b,dev_c, 4);
+	matmul<<<1,16>>> (a,b,dev_c, 4);
 
 	// finished computation, store result in dev_c
 	int host_c[4][4];

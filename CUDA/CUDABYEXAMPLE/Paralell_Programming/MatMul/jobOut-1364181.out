@@ -1,0 +1,15 @@
+Loading cudnn8.9-cuda12.2/8.9.7.29
+  Loading requirement: cuda12.2/toolkit/12.2.2
+matmul.cu(51): error: a value of type "int (*)[4]" cannot be assigned to an entity of type "int (*)[4][4]"
+   dev_c = c;
+         ^
+
+matmul.cu(57): error: argument of type "int (*)[4][4]" is incompatible with parameter of type "int (*)[4]"
+   matmul<<<1,16>>> (a,b,dev_c, 4);
+                         ^
+
+2 errors detected in the compilation of "matmul.cu".
+-17456, 32767, 1431696066, 0, 
+5, 0, 1432177245, 21845, 
+-136822040, 32767, 1432177168, 21845, 
+0, 0, 1431694064, 21845, 
