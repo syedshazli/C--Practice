@@ -61,8 +61,12 @@ int main(){
 
 	cudaMalloc( (void**) &dev_a, sizeof(a)  );
 	cudaMalloc((void**) &dev_b, sizeof(b) );
+	
+	cudaMemcpy(dev_b,b,sizeof(int)*16,cudaMemcpyHostToDevice);
+	cudaMemcpy(dev_a,a,cudaMemcpyHostToDevice);
+	
 	// 4 blocks, 4 threads per block
-	matmul<<<1,16>>> (a,b,dev_c, 4);
+	matmul<<<1,16>>> (dev_a,dev_b,dev_c, 4);
 
 	// finished computation, store result in dev_c
 	int host_c[4][4];
@@ -78,5 +82,7 @@ int main(){
         }
         cout<<endl;
     }
-	
+	cudaFree(dev_c);
+	cudaFree(dev_a);
+	cudaFree(dev_b);	
 }
