@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 // pass by reference
@@ -52,8 +53,11 @@ int main(){
     std::vector<std::vector<int>> c(4, std::vector<int> (4,0)  );
 
     // pass by ref in function so C can be modified
+    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
     matmul(a,b,c, 4);
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << "[ns]" << std::endl;
 
     for(int row  = 0; row <4; row++ ){
         for(int col = 0; col<4; col++){//c++ XD
