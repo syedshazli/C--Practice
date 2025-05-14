@@ -41,11 +41,7 @@ int main(){
         2, 2, 2, 2,
     };
 
-	int c[4][4] = {
-	0, 0, 0, 0,
-	0, 0, 0, 0,
-	0, 0, 0, 0,
-	};
+	int c[4][4];
 
 	int (*dev_c)[4];// points to the first row of the array, each row has 4 ints
 //	dev_c = c; // dev_c points to the 2d array c
@@ -72,15 +68,14 @@ int main(){
 	matmul<<<dim3(2,2),dim3(2,2)>>> (dev_a,dev_b,dev_c, 4);
 
 	// finished computation, store result in dev_c
-	int host_c[4][4];
-	cudaMemcpy(host_c, dev_c, sizeof(c), cudaMemcpyDeviceToHost);
+	cudaMemcpy(c, dev_c, sizeof(c), cudaMemcpyDeviceToHost);
 
 
 	for(int row  = 0; row <4; row++ ){
 		
      	   for(int col = 0; col<4; col++){//c++ XD
 
-        	cout<<host_c[row][col]<<','<<' ';
+        	cout<<c[row][col]<<','<<' ';
 
         }
         cout<<endl;
