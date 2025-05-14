@@ -73,7 +73,7 @@ int main(){
 
 	// finished computation, store result in dev_c
 	int host_c[4][4];
-	cudaMemcpy(&host_c, dev_c, sizeof(c), cudaMemcpyDeviceToHost);
+	cudaMemcpy(host_c, dev_c, sizeof(c), cudaMemcpyDeviceToHost);
 
 
 	for(int row  = 0; row <4; row++ ){

@@ -1,0 +1,12 @@
+Loading cudnn8.9-cuda12.2/8.9.7.29
+  Loading requirement: cuda12.2/toolkit/12.2.2
+matmul.cu(44): warning #550-D: variable "c" was set but never used
+   int c[4][4] = {
+       ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+8, 8, 8, 8, 
+8, 8, 8, 8, 
+8, 8, 8, 8, 
+8, 8, 8, 8, 
