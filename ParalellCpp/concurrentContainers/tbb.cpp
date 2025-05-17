@@ -6,7 +6,7 @@
 #include <random>
 #include <thread>
 #include <vector>
-#include <concurrent_queue.h>
+#include <tbb/concurrent_queue.h>
 
 int main(){
     
@@ -24,6 +24,8 @@ int main(){
 
     auto work = [&](){
         for(int i = 0; i<elementsPerThread; i++){
+            // no need for lock guard
+            // multiple threads can call push at the same time
             queue.push(dist(mt));
         }
     };
