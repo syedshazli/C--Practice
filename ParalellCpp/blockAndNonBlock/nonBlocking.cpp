@@ -54,6 +54,7 @@ int main(){
                 if(expected == numIterations) return;
                 desired = expected + 1;
             }
+            // try exchange weak
             while(!sink.compare_exchange_strong(expected, desired));
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
