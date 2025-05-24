@@ -73,6 +73,16 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "list": "cpp",
-        "semaphore": "cpp"
+        "semaphore": "cpp",
+        "cinttypes": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "cstdarg": "cpp",
+        "functional": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp"
     }
 }
