@@ -12,7 +12,7 @@ int main(){
     while (input >> word){
         parsingSet.emplace(word);
     }
-
+    
     std::cout<<"The text has "<<parsingSet.size()<<" unique words "<<'\n';
 
 }
