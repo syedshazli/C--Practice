@@ -5,7 +5,7 @@
 const int numThreads = 8;
 std::atomic_int threadsWaiting = 0;
 
-void barrier(std::thread myTHread){
+void barrier(std::thread myThread){
     ++threadsWaiting; // pre increment threads waiting
     while(true){
         if(threadsWaiting == numThreads){
@@ -16,7 +16,9 @@ void barrier(std::thread myTHread){
 
 }
 
-void doSomething(){
+void doSomething(std::thread worker){
+
+    
 
 }
 
