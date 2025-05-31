@@ -7,3 +7,7 @@ __global__ void barrier(){
     }
     __syncthreads();
 }
+
+int main(){
+    barrier<<<1, 16>>>();
+}
