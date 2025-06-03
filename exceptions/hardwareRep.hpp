@@ -16,4 +16,9 @@ class hwInfo{
         }
 
 };
+
+void updateHardware(hwInfo &myHW);
+
+void pingHardware(int numIterations, hwInfo &myHW);
+
 #endif
