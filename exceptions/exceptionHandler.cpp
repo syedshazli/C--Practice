@@ -4,6 +4,11 @@
 int main(){
 
 
+    // Kernel pings/polls the HW to see if any trap opcode comes
+    // if it comes, receive the info from the HW, and encode in struct 
+    // output the exception on the debugger
+
+
     
 
 }

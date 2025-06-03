@@ -1,4 +1,5 @@
 
+// a basic example of an exception being called in cuda-gdb
 __global__ callMe(int *dev_a){
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
     // exception thrown here.
