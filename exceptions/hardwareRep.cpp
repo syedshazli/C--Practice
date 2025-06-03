@@ -2,13 +2,19 @@
 #include <iostream>
 class hwInfo{
 
-    hwInfo(){
-        std::cout<<"Im the hardware. You can ping me any time, and I'll give you an exception if I have one. \n";
-    }
-    std::string exceptionInstruction; // different exceptions are encoded with different values
+    private:
+        std::string exceptionInstruction; // different exceptions are encoded with different values
     public:
+        hwInfo(){
+        std::cout<<"Im the hardware. You can ping me any time, and I'll give you an exception if I have one. \n";
+        }
+
         void setException(std::string exceptionMessage){
             exceptionInstruction = exceptionMessage;
+        }
+
+        std::string getException(){
+            return exceptionInstruction;
         }
 
 };
