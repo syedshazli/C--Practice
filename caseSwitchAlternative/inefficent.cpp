@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <map>
 int main(){
 
     int i = 0;
@@ -25,4 +25,8 @@ int main(){
             std::cout<<5;
 
         }
+    std::map myMap;
+    for(int i = 0; i<5; i++){
+        myMap[i] = i;
+    }
 }
