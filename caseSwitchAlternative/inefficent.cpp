@@ -25,7 +25,7 @@ int main(){
             std::cout<<5;
 
         }
-    std::map myMap;
+    std::map myMap<int>;
     for(int i = 0; i<5; i++){
         myMap[i] = i;
     }
