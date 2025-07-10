@@ -7,7 +7,7 @@ project(Hello)
 # Set Cpp Standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
+set(CMAKE_CXX_CLANG_TIDY)
 # Set C++ Specific flags
 set(CMAKE_CXX_FLAGS "-Wall -Werror -O2 -march=native")
 
