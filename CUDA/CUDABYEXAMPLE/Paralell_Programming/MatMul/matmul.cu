@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-
+#include <chrono>
 
 // host must do cuda malloc on arrays a,b, c
 // then a CUDAMEMCPY on array c
@@ -64,9 +63,13 @@ int main(){
 	cudaMemcpy(dev_b,b,sizeof(b),cudaMemcpyHostToDevice);
 	cudaMemcpy(dev_a,a,sizeof(a),cudaMemcpyHostToDevice);
 	
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 	// 4 blocks, 4 threads per block
 	matmul<<<dim3(2,2),dim3(2,2)>>> (dev_a,dev_b,dev_c, 4);
 
+	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << "[ns]" << std::endl;
 	// finished computation, store result in dev_c
 	cudaMemcpy(c, dev_c, sizeof(c), cudaMemcpyDeviceToHost);
 

@@ -1,6 +1,6 @@
 Loading cudnn8.9-cuda12.2/8.9.7.29
   Loading requirement: cuda12.2/toolkit/12.2.2
-We did itttt
+Device overlap all setWe did itttt
 9720 + 94478400 * 4860 = -349237472
 9721 + 94497841 * 4860 = -254749352
 9722 + 94517284 * 4861 = -65724506

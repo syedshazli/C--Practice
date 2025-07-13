@@ -1,5 +1,6 @@
 Loading cudnn8.9-cuda12.2/8.9.7.29
   Loading requirement: cuda12.2/toolkit/12.2.2
+Time difference = 15010344[ns]
 8, 8, 8, 8, 
 8, 8, 8, 8, 
 8, 8, 8, 8, 
