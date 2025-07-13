@@ -8,9 +8,9 @@ void pointMe(int *aNum){
     cout<<"&anum is "<<&aNum<<endl;
 }
 
-void pointMeArray(int *aNum){
-    cout<<"aNum is "<<aNum[0]<<endl;
-    cout<<"&anum is "<<&aNum[0]<<endl;
+void pointMeArray(int *bNum){
+    cout<<"bNum is "<<bNum[0]<<endl;
+    cout<<"&bnum is "<<&bNum[0]<<endl;
 }
 
 int main(){
