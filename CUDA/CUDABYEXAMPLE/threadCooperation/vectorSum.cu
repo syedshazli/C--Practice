@@ -15,7 +15,18 @@ __global__ void add(int *a, int *b, int *c, int *d){
 
 
 int main(void){
-	
+
+	cudaDeviceProp prop;
+	int whichDevice;
+ 	cudaGetDevice( &whichDevice  );
+ 	cudaGetDeviceProperties( &prop, whichDevice ) ;
+	if(!prop.deviceOverlap){
+	printf("No device overlap, sorry!");
+	}	
+
+	else{
+	printf("Device overlap all set");
+	}
 
 	int a[N], b[N], c[N], d[N];
 	int *device_a, *device_b, *device_c, *device_d;

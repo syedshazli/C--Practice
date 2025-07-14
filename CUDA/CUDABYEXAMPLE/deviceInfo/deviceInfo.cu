@@ -28,7 +28,9 @@ int main(void){
 	cout<<"32 bit Registers per multiprocessor: "<<prop.regsPerBlock<<endl;
 	cout<<"Threads in warp: "<<prop.warpSize<<endl;
 	cout<<"Max threads per block: "<<prop.maxThreadsPerBlock<<endl;
-
+	if(!prop.deviceOverlap){
+	cout<<"Sorry, no CUDA Streams benefit"<<endl;
+	}
 	}//end of for loop
 
 }
