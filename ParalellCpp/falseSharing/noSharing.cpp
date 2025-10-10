@@ -10,7 +10,7 @@ struct AlignedAtomic{
 
 int main(){
 
-    const int numIterations = 1 <<10;
+    const int numIterations = 1 <<20;
 
     // num threads to spawn
     const int numThreads = 4;
@@ -42,5 +42,4 @@ int main(){
     }
     return 0;
 
-    return 0;
 }

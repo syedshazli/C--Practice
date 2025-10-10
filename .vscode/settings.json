@@ -83,6 +83,8 @@
         "regex": "cpp",
         "set": "cpp",
         "unordered_map": "cpp",
-        "xhash": "cpp"
-    }
+        "xhash": "cpp",
+        "cassert": "cpp"
+    },
+    "cmake.ignoreCMakeListsMissing": true
 }
