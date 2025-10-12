@@ -1,9 +1,8 @@
 #include <iostream>
 #include <map>
-int main(){
-
-    int i = 0;
-    switch (i){
+void callSwitch(int i)
+{
+switch (i){
         case(0):
             std::cout<<0;
         
@@ -25,8 +24,13 @@ int main(){
             std::cout<<5;
 
         }
+}
+int main(){
+
+    int i = 0;
+    
     std::map myMap<int>;
     for(int i = 0; i<5; i++){
-        myMap[i] = i;
+        myMap[i] = callSwitch[i];
     }
 }
