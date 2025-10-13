@@ -1,27 +1,32 @@
 #include <iostream>
 #include <map>
-void callSwitch(int i)
+
+int callFunc(int i)
+{
+
+}
+int callSwitch(int i)
 {
 switch (i){
         case(0):
-            std::cout<<0;
+            return callFunc(i) +2;
         
     
         case(1):
-            std::cout<<1;
+            return callFunc(i) +7;
         
         case(2):
-            std::cout<<2;
+            return callFunc(i) +1;
 
         case(3):
-            std::cout<<3;
+            return callFunc(i) +3;
 
 
         case(4):
-            std::cout<<4;
+            return callFunc(i) +5;
         
         case(5):
-            std::cout<<5;
+            return callFunc(i) +4;
 
         }
 }
@@ -31,6 +36,7 @@ int main(){
     
     std::map myMap<int>;
     for(int i = 0; i<5; i++){
-        myMap[i] = callSwitch[i];
+        
+        myMap[i] = callSwitch(i);
     }
 }
