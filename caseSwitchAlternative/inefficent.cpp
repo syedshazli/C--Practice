@@ -34,7 +34,7 @@ int main(){
 
     int i = 0;
     
-    std::map myMap<int>;
+    std::map<int,int> myMap;
     for(int i = 0; i<5; i++){
         
         myMap[i] = callSwitch(i);
