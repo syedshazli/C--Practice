@@ -9,8 +9,8 @@ void pointMe(int *aNum){
 }
 
 void pointMeArray(int *bNum){
-    cout<<"bNum is "<<bNum[0]<<endl;
-    cout<<"&bnum is "<<&bNum[0]<<endl;
+    cout<<"bNum is "<<bNum[0]<<endl; // prints 1
+    cout<<"&bnum is "<<&bNum[0]<<endl; // prints mem address of bNum[0]
 }
 
 int main(){
