@@ -1,0 +1,46 @@
+Loading cudnn8.9-cuda12.2/8.9.7.29
+  Loading requirement: cuda12.2/toolkit/12.2.2
+Wed Sep 10 13:06:29 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A30                     On  |   00000000:CA:00.0 Off |                    0 |
+| N/A   32C    P0             30W /  165W |       1MiB /  24576MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A30                     On  |   00000000:E3:00.0 Off |                    0 |
+| N/A   32C    P0             28W /  165W |       1MiB /  24576MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Hello from thread 1
+Hello from thread 2
+Hello from thread 5
+Hello from thread 9
+Hello from thread 6
+Hello from thread 3
+Hello from thread 0
+Hello from thread 7
+Hello from thread 4
+Hello from thread 8
+0 + 0 = 0
+-1 + 1 = 0
+-2 + 4 = 2
+-3 + 9 = 6
+-4 + 16 = 12
+-5 + 25 = 20
+-6 + 36 = 30
+-7 + 49 = 42
+-8 + 64 = 56
+-9 + 81 = 72
