@@ -4,7 +4,7 @@
 
 
 // g++ -c add.cpp multiply.cpp -fpic
-// load lib at runtime, we dont know at compile team where in mem it'll be
+// load lib at runtime, we dont know at compile time where in mem it'll be
 // can't rely on fixed address, code should run no matter position
 // hence fpic flag
 
