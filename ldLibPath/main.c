@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "myMath.h"
-// #include "moreMath.h"
+#include "moreMath.h"
 /**
  * first compile: $ gcc main.c -o myapp -L. -lmathlib
  * -L. tells compiler to only look in current directory for any libraries
@@ -25,8 +25,9 @@ int main()
     int b = 5;
     int resultofAdd = add(a,b);
 
-    // int c,d = 7;
-    // int resultofSubtract = subtract(a,b);
+    int c = 8;
+    int d = 10;
+    int resultofSubtract = subtract(c,d);
     printf("Result of add is %d\n", resultofAdd);
-    // printf("Result of subtract is %d", resultofSubtract);
+    printf("Result of subtract is %d\n", resultofSubtract);
 }
