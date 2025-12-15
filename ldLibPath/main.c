@@ -27,6 +27,6 @@ int main()
 
     // int c,d = 7;
     // int resultofSubtract = subtract(a,b);
-    printf("Result of add is %d", resultofAdd);
+    printf("Result of add is %d\n", resultofAdd);
     // printf("Result of subtract is %d", resultofSubtract);
 }
