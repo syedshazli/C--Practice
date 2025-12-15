@@ -8,5 +8,6 @@
 #SBATCH --gres=gpu:1
 #SBATCH --output jobOut-%j.out
 module load cudnn8.9-cuda12.2/8.9.7.29
+nvidia-smi
 nvcc helloworld.cu -o add
 ./add
