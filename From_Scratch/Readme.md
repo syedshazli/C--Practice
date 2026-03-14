@@ -1,0 +1,1 @@
+It's becoming increasingly known that interviewers want first principles thinkers, and as a result ask questions such as "Implement std::vector or unique ptr from scratch." This folder aims to serve as my best reimplementation of those concepts
