@@ -1,13 +1,16 @@
 #include <array>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // user can specify type t when they call the function
+// can avoid heavy operator overloading seen in overLoading.cpp with func tempaltes
 //template<typename Template>
 // C++ 20: use auto array as such: void printArray(auto array){}
 // to run: g++ funcTemplates.cpp -o funcTemp --std=c++20
 // ./funcTemp
 
+// we can pass in an array of ints, floats, etc of any size. and we can also pass in std::vectors too! As long as it's any list it will work
 template<typename Template>
 void printArray(Template array){
     // note: auto is pretty important here bcz we dont know type of data
@@ -31,6 +34,10 @@ int main(){
     array<float, 3> myFloatArray = {1.3, 2.2f,3.1f};
       // also works  printArray<array<float, 3>>(myFloatArray);
       printArray(myFloatArray);
+    
+      // this also works!! 
+      std::vector<int> tryThis={1,2,3,4,5};
+      printArray(tryThis); 
 
     return 0;
 }
