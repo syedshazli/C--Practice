@@ -1,11 +1,13 @@
 #ifndef ADD_H
 #define ADD_H
 
-int add(int a, int b)
+#include "sub.hpp"
+
+inline int add(int a, int b)
 {
-    return a+b;
+    return sub(a,b) + a+b; // can call other functions defined in our other headers
 }
-float mult(int a, int b)
+inline float mult(int a, int b)
 {
     return a*b;
 }
