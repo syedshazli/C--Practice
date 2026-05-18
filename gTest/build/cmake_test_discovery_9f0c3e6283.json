@@ -1,0 +1,17 @@
+{
+  "tests": 1,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "HelloTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "BasicAssertions",
+          "file": "\/home\/syed-shazli\/Downloads\/C--Practice\/gTest\/helloGTest.cpp",
+          "line": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+/home/syed-shazli/Downloads/C--Practice/gTest/build/CMakeFiles/hello_test.dir
+/home/syed-shazli/Downloads/C--Practice/gTest/build/CMakeFiles/test.dir
+/home/syed-shazli/Downloads/C--Practice/gTest/build/CMakeFiles/edit_cache.dir
+/home/syed-shazli/Downloads/C--Practice/gTest/build/CMakeFiles/rebuild_cache.dir
